@@ -36,6 +36,12 @@ out which settings Hyprland actually has. Easier management of keybindings and
 Dropping a few widgets like audio from the bar frees space for ones I get more
 out of. And hopefully someone else finds it useful too.
 
+## Repository and runtime
+
+This is `Gberfield/omasettings`, a downstream copy of [Tobias Wiking's OmaSettings](https://github.com/twiking/omasettings). The manifest identifies upstream version `1.3.0` and plugin ID `io.github.twiking.omasettings`. The installation command below intentionally installs upstream; it does not install this checkout.
+
+OmaSettings runs inside Omarchy's `omarchy-shell` Quickshell process. It expects Omarchy's shell plugin API and commands, and the Lua-based Hyprland configuration described below. It is not a standalone settings application for arbitrary Linux desktops or legacy Hyprland `.conf` setups. No compile step or package manifest is provided in this repository.
+
 ## Install
 
 ```sh
@@ -79,7 +85,7 @@ applying the tmux option, and rolled back if it fails.
 | `tmux`, `nvim`, `herdr`      | Their own pages under Applications                    |
 | `xkbcli`                     | Checking a keyboard layout compiles before writing it |
 
-Only `jq` is required. A page whose tool is missing says so instead of failing.
+Within the supported Omarchy runtime, `jq` is the required helper. A page whose optional tool is missing says so instead of failing.
 Nothing here needs root, and nothing is installed on your behalf.
 
 ## Remove
@@ -93,3 +99,4 @@ The launcher entry it wrote is deleted with it.
 ## License
 
 MIT, see [LICENSE](LICENSE).
+
